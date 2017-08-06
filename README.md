@@ -20,6 +20,20 @@ PS.本機沒有切virtualenv，所以有一些套件如果沒用到可以自行�
 
 路由設定 /cyber/cyber/urls.py
 
+## 初始化設定 ##
+
+建立資料表所需之 migrate 文件
+
+    ./manage.py makemigrations
+
+透過 migrate 建立資料表
+
+    ./manage.py migrate
+
+建立後台管理員
+
+    ./manage.py createsuperuser
+
 ## 啟用Server ##
 
     ./manage.py runserver 0.0.0.0:8000
