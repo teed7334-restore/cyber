@@ -8,7 +8,7 @@ class Slider(models.Model):
     title = models.CharField('標題', max_length=50)
     content = models.CharField('內容', max_length=100)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def __save__(self,*args, **kwargs):
@@ -29,7 +29,7 @@ class About(models.Model):
     title = models.CharField('標題', max_length=50)
     content = models.TextField('內容')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def __save__(self,*args, **kwargs):
@@ -50,7 +50,7 @@ class Management_Philosophy(models.Model):
     title = models.CharField('標題', max_length=50)
     content = models.TextField('內容')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def __save__(self,*args, **kwargs):
@@ -72,7 +72,7 @@ class Partner(models.Model):
     title = models.CharField('標題', max_length=50)
     url = models.URLField('網址', max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
     def __save__(self,*args, **kwargs):
@@ -98,7 +98,7 @@ class Contact(models.Model):
     url = models.URLField('網址', max_length=200, null=True, blank=True)
     message = models.TextField('訊息')
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def __save__(self,*args, **kwargs):
@@ -126,7 +126,7 @@ class Company(models.Model):
     zipcode = models.IntegerField('郵遞區號', default=0)
     address = models.CharField('地址', max_length=200)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.name
 
     def __save__(self,*args, **kwargs):
