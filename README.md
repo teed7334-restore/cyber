@@ -4,15 +4,13 @@
 ## 開發環境 ##
 Linux
 
-Python 2.7.13
+Python 3.5.3
 
 PostgreSQL 9.6.3
 
 ## 初始化套件 ##
 
     pip install -r path/requirements.txt
-
-PS.本機沒有切virtualenv，所以有一些套件如果沒用到可以自行評估拿掉
 
 ## 常用設定檔 ##
 
