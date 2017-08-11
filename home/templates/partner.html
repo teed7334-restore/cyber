@@ -9,11 +9,12 @@
     </div>
     <div class="container">
         <div class="row">
+            {% load cloudinary %}
             {% for item in partner %}
             <div class="col-lg-3 col-md-6 text-center">
                 <div class="service-box">
                     <a href="{{ item.url }}" target="_balnk">
-                        <img src="/static/upload/{{ item.logo }}" width="100" alt="{{ item.title }}" title="{{ item.title }}" />
+                        {% cloudinary item.logo width=100 crop="fill" %}
                     </a>
                 </div>
             </div>

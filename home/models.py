@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
+from cloudinary.models import CloudinaryField
 
 # Create your models her
 class Slider(models.Model):
@@ -68,7 +69,7 @@ class Management_Philosophy(models.Model):
         verbose_name_plural = '經營理念'
 
 class Partner(models.Model):
-    logo = models.ImageField('圖示', upload_to='./', default = './no-profile-pic-img.gif')
+    logo = CloudinaryField('image')
     title = models.CharField('標題', max_length=50)
     url = models.URLField('網址', max_length=200)
 

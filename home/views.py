@@ -4,6 +4,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render
 from home.models import Slider, About, Management_Philosophy, Partner, Contact, Company
 from django import forms
+from cloudinary import api
 
 # Create your views here.
 def index(request):

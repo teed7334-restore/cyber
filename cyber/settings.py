@@ -30,7 +30,7 @@ ALLOWED_HOSTS = ['*']
 
 
 # Application definition
-
+import cloudinary
 INSTALLED_APPS = [
     'bootstrap_admin',
     'django.contrib.admin',
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'easy_maps',
+    'cloudinary',
     'home',
 ]
 
@@ -150,9 +151,12 @@ STATICFILES_DIRS = (
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-MEDIA_URL = '/static/upload/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'home/static/upload')
-
 if os.getenv('DATABASE_URL') is not None:
     import dj_database_url
     DATABASES['default'] = dj_database_url.config()
+
+cloudinary.config(
+  cloud_name = "hcyjyjmbc",
+  api_key = "148484229958283",
+  api_secret = "NoE0SOz6vhLEdGpotmfQKIFX8NE"
+)
