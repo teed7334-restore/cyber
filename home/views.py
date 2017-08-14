@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from home.models import Slider, About, Management_Philosophy, Partner, Contact, Company
+from home.models import Slider, About, Management_Philosophy, Partner, Contact, Company, GA
 from django import forms
 from cloudinary import api
 
@@ -18,6 +18,7 @@ def index(request):
         'management_philosophy': management_philosophy(),
         'partner': partner(),
         'company': company(),
+        'ga': ga(),
     }
     return render(request, 'index.html', response)
 
@@ -42,6 +43,10 @@ def partner():
 
 def company():
     response = Company.objects.all().order_by('pk')
+    return response;
+
+def ga():
+    response = GA.objects.all()[:1]
     return response;
 
 def do_post(request):

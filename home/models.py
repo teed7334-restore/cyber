@@ -143,3 +143,20 @@ class Company(models.Model):
         db_table = 'company'
         verbose_name = '公司資訊'
         verbose_name_plural = '公司資訊'
+
+class GA(models.Model):
+    track_id = models.CharField('追蹤碼ID', max_length=14)
+
+    def __str__(self):
+        return self.track_id
+
+    def __save__(self,*args, **kwargs):
+        if self.track_id:
+            self.track_id = strip_tags(self.track_id)
+
+        super(GA, self).save(*args, **kwargs)
+
+    class Meta:
+        db_table = 'ga'
+        verbose_name = 'GA追蹤'
+        verbose_name_plural = 'GA追蹤'

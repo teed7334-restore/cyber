@@ -8,6 +8,7 @@ from .models import Management_Philosophy
 from .models import Partner
 from .models import Contact
 from .models import Company
+from .models import GA
 
 # Register your models here.
 admin.site.register(Slider)
@@ -16,3 +17,4 @@ admin.site.register(Management_Philosophy)
 admin.site.register(Partner)
 admin.site.register(Contact)
 admin.site.register(Company)
+admin.site.register(GA)
